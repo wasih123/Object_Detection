@@ -13,6 +13,7 @@
 9. [ToDo](#todo)
 10. [Important notes](#important-notes)
 11. [Terminology](#terminology)
+12. [My part(Wasih)]
 
 ### Overview
 
@@ -264,3 +265,12 @@ Currently in the works:
 * "Anchor boxes": The paper calls them "default boxes", in the original C++ code they are called "prior boxes" or "priors", and the Faster R-CNN paper calls them "anchor boxes". All terms mean the same thing, but I slightly prefer the name "anchor boxes" because I find it to be the most descriptive of these names. I call them "prior boxes" or "priors" in `keras_ssd300.py` and `keras_ssd512.py` to stay consistent with the original Caffe implementation, but everywhere else I use the name "anchor boxes" or "anchors".
 * "Labels": For the purpose of this project, datasets consist of "images" and "labels". Everything that belongs to the annotations of a given image is the "labels" of that image: Not just object category labels, but also bounding box coordinates. "Labels" is just shorter than "annotations". I also use the terms "labels" and "targets" more or less interchangeably throughout the documentation, although "targets" means labels specifically in the context of training.
 * "Predictor layer": The "predictor layers" or "predictors" are all the last convolution layers of the network, i.e. all convolution layers that do not feed into any subsequent convolution layers.
+
+### My Part(Wasih)
+I changed the following things:
+1. Shape of last all predictor layers from 3 * 3 * (4 * 81) => 3 * 3 * (4 * 3)
+2. Shape was changed by down-sampling the weights to correspond to 3 classes
+3. Changed weight file was re-written.
+To run:
+1. Download pre-trained weight file on coco dataset: https://drive.google.com/open?id=1vmEF7FUsWfHquXyCqO17UaXOPpRbwsdj
+2. Run: python3 train.py <weight file path(above weight file)> <images directory path> <labels path>
