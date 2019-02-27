@@ -1,3 +1,0 @@
-[submodule "ssd_keras"]
-	path = ssd_keras
-	url = ./ssd_keras/
