@@ -272,5 +272,6 @@ I changed the following things:
 2. Shape was changed by down-sampling the weights to correspond to 3 classes
 3. Changed weight file was re-written.
 To run:
+0. NOTE that ssd_keras is not getting reflected on git for some reason. Clone it from here: https://github.com/pierluigiferrari/ssd_keras.git and paste this train.py inside ssd_keras folder
 1. Download pre-trained weight file on coco dataset: https://drive.google.com/open?id=1vmEF7FUsWfHquXyCqO17UaXOPpRbwsdj
 2. Run: python3 train.py <weight file path(above weight file)> <images directory path> <labels path>
